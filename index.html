@@ -1,0 +1,1869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rubayate Hossain — SQA Engineer, Manual QA Tester, and Computer Science professional." />
+  <meta name="author" content="Rubayate Hossain" />
+  <title>Rubayate Hossain | SQA Engineer</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      --bg: #0b1120;
+      --bg-secondary: #111827;
+      --card: #151e2e;
+      --card-hover: #1b2639;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --border: rgba(148, 163, 184, 0.15);
+      --accent: #38bdf8;
+      --accent-dark: #0284c7;
+      --accent-soft: rgba(56, 189, 248, 0.1);
+      --success: #34d399;
+      --max-width: 1180px;
+      --radius: 16px;
+      --transition: 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(11, 17, 32, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: -7px;
+      background: var(--accent);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(56, 189, 248, 0.08);
+      filter: blur(80px);
+      top: -160px;
+      right: -100px;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: rgba(99, 102, 241, 0.06);
+      filter: blur(80px);
+      bottom: -180px;
+      left: -100px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 13px;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 999px;
+      color: var(--accent);
+      background: var(--accent-soft);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 10px var(--success);
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 13px 21px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      transition: transform var(--transition), box-shadow var(--transition),
+        background var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #06111d;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: #67d3fa;
+      box-shadow: 0 12px 30px rgba(56, 189, 248, 0.22);
+    }
+
+    .btn-secondary {
+      border-color: var(--border);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      border-color: rgba(56, 189, 248, 0.35);
+      background: var(--accent-soft);
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================== */
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      max-width: 700px;
+      margin-bottom: 50px;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    .section-description {
+      color: var(--muted);
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-card {
+      background: linear-gradient(
+        145deg,
+        rgba(56, 189, 248, 0.09),
+        rgba(255, 255, 255, 0.02)
+      );
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 35px;
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::after {
+      content: "</>";
+      position: absolute;
+      right: 25px;
+      bottom: 5px;
+      color: rgba(56, 189, 248, 0.06);
+      font-size: 7rem;
+      font-weight: 800;
+    }
+
+    .about-icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      color: var(--accent);
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+    }
+
+    .about-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 8px;
+    }
+
+    .about-card p {
+      color: var(--muted);
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      margin-top: 25px;
+    }
+
+    .highlight {
+      padding: 15px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .highlight strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 3px;
+    }
+
+    .highlight span {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    /* =========================
+       SKILLS
+    ========================== */
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .skill-card {
+      padding: 26px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      transition: var(--transition);
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      background: var(--card-hover);
+      border-color: rgba(56, 189, 248, 0.3);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+    }
+
+    .skill-card-icon {
+      color: var(--accent);
+      font-size: 1.3rem;
+      margin-bottom: 16px;
+    }
+
+    .skill-card h3 {
+      font-size: 1rem;
+      margin-bottom: 13px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .tag {
+      padding: 6px 9px;
+      background: rgba(255, 255, 255, 0.045);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: #cbd5e1;
+      font-size: 0.72rem;
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================== */
+
+    .timeline {
+      position: relative;
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: linear-gradient(
+        to bottom,
+        var(--accent),
+        rgba(56, 189, 248, 0.08)
+      );
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 45px;
+      margin-bottom: 50px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 0 5px rgba(56, 189, 248, 0.08);
+    }
+
+    .experience-card {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      transition: var(--transition);
+    }
+
+    .experience-card:hover {
+      border-color: rgba(56, 189, 248, 0.28);
+      transform: translateX(4px);
+    }
+
+    .experience-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+
+    .experience-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 3px;
+    }
+
+    .company {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+
+    .date {
+      white-space: nowrap;
+      color: var(--muted);
+      font-size: 0.78rem;
+      padding: 6px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+    }
+
+    .experience-card ul {
+      list-style: none;
+    }
+
+    .experience-card li {
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding-left: 19px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    .experience-card li::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* =========================
+       PROJECTS
+    ========================== */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 27px;
+      display: flex;
+      flex-direction: column;
+      min-height: 330px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(56, 189, 248, 0.3);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.22);
+    }
+
+    .project-card::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: 0;
+      left: 0;
+      top: 0;
+      background: var(--accent);
+      transition: width var(--transition);
+    }
+
+    .project-card:hover::before {
+      width: 100%;
+    }
+
+    .project-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      background: var(--accent-soft);
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .project-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.86rem;
+      margin-bottom: 18px;
+    }
+
+    .project-tech {
+      margin-top: auto;
+      margin-bottom: 22px;
+    }
+
+    .project-link {
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+    }
+
+    .project-link:hover {
+      gap: 12px;
+    }
+
+    /* =========================
+       EDUCATION
+    ========================== */
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .education-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      padding: 25px;
+      transition: var(--transition);
+    }
+
+    .education-card:hover {
+      border-color: rgba(56, 189, 248, 0.25);
+      transform: translateY(-4px);
+    }
+
+    .education-year {
+      color: var(--accent);
+      font-size: 0.76rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .education-card h3 {
+      font-size: 1rem;
+      margin-bottom: 5px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* =========================
+       RESUME CTA
+    ========================== */
+
+    .resume-box {
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(56, 189, 248, 0.1),
+          rgba(99, 102, 241, 0.07)
+        );
+      border-radius: 24px;
+      padding: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .resume-box h2 {
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      margin-bottom: 7px;
+    }
+
+    .resume-box p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--card);
+      transition: var(--transition);
+    }
+
+    .contact-item:hover {
+      border-color: rgba(56, 189, 248, 0.3);
+      transform: translateX(4px);
+    }
+
+    .contact-icon {
+      width: 42px;
+      height: 42px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-radius: 10px;
+    }
+
+    .contact-item small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.7rem;
+      margin-bottom: 1px;
+    }
+
+    .contact-item span {
+      font-size: 0.83rem;
+      word-break: break-word;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .form-group {
+      display: grid;
+      gap: 7px;
+    }
+
+    .form-group label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+      border-radius: 10px;
+      padding: 13px 14px;
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.08);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 145px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .social-links a {
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      transition: var(--transition);
+    }
+
+    .social-links a:hover {
+      color: var(--accent);
+      border-color: rgba(56, 189, 248, 0.35);
+      transform: translateY(-3px);
+    }
+
+    /* =========================
+       REVEAL ANIMATION
+    ========================== */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 900px) {
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-card {
+        min-height: 260px;
+      }
+    }
+
+    @media (max-width: 700px) {
+      section {
+        padding: 75px 0;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        background: rgba(11, 17, 32, 0.98);
+        border-bottom: 1px solid var(--border);
+        transform: translateY(-130%);
+        opacity: 0;
+        pointer-events: none;
+        transition: var(--transition);
+      }
+
+      .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .skills-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-top {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .date {
+        align-self: flex-start;
+      }
+
+      .resume-box {
+        padding: 35px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-item {
+        padding-left: 32px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HEADER / NAVIGATION
+  ========================== -->
+
+  <header>
+    <div class="container">
+      <nav aria-label="Main navigation">
+        <a href="#home" class="logo">RH<span>.</span></a>
+
+        <button
+          class="menu-toggle"
+          id="menuToggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content reveal">
+          <div class="eyebrow">Open to SQA Opportunities</div>
+
+          <h1>
+            Rubayate<br />
+            <span>Hossain.</span>
+          </h1>
+
+          <p class="hero-description">
+            Detail-oriented Software Quality Assurance professional with
+            hands-on experience in manual testing, test case design,
+            defect management, requirement analysis, API testing, and
+            test automation fundamentals.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">
+              Contact Me
+              <i class="fa-solid fa-arrow-down"></i>
+            </a>
+
+            <a href="#projects" class="btn btn-secondary">
+              View Projects
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">About Me</div>
+          <h2 class="section-title">Quality-focused. Detail-driven.</h2>
+          <p class="section-description">
+            A professional background combining software quality assurance,
+            technical support, data validation, client communication, and
+            computer science.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-card reveal">
+            <div class="about-icon">
+              <i class="fa-solid fa-bug-slash"></i>
+            </div>
+
+            <h3>SQA & Manual Testing</h3>
+
+            <p>
+              Focused on identifying defects, validating requirements,
+              improving test coverage, and delivering reliable software
+              experiences.
+            </p>
+          </div>
+
+          <div class="about-text reveal">
+            <p>
+              I am a Computer Science Engineering graduate with hands-on
+              experience in manual testing, test case design, defect
+              management, requirement analysis, and data validation across
+              banking and e-commerce applications.
+            </p>
+
+            <p>
+              My QA foundation includes SDLC/STLC, Agile/Scrum, Waterfall,
+              functional testing, regression testing, UAT, exploratory
+              testing, API testing, database validation, and structured
+              test documentation.
+            </p>
+
+            <p>
+              I also bring client-facing experience in software sales and
+              requirement gathering, allowing me to understand both
+              technical requirements and real-world business workflows.
+            </p>
+
+            <div class="about-highlights">
+              <div class="highlight">
+                <strong>Manual QA</strong>
+                <span>Functional, Regression & UAT</span>
+              </div>
+
+              <div class="highlight">
+                <strong>Automation</strong>
+                <span>Playwright & API Testing</span>
+              </div>
+
+              <div class="highlight">
+                <strong>Requirement Analysis</strong>
+                <span>Scenarios, Cases & RTM</span>
+              </div>
+
+              <div class="highlight">
+                <strong>Technical Background</strong>
+                <span>Computer Science & Data Science</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Core Skills</div>
+          <h2 class="section-title">Tools & expertise.</h2>
+          <p class="section-description">
+            A practical QA toolkit built around structured testing,
+            documentation, validation, and software quality.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+
+          <article class="skill-card reveal">
+            <div class="skill-card-icon">
+              <i class="fa-solid fa-vial-circle-check"></i>
+            </div>
+            <h3>Manual Testing</h3>
+            <div class="tags">
+              <span class="tag">Black-Box</span>
+              <span class="tag">White-Box</span>
+              <span class="tag">Regression</span>
+              <span class="tag">Smoke</span>
+              <span class="tag">Sanity</span>
+              <span class="tag">UAT</span>
+              <span class="tag">Exploratory</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card-icon">
+              <i class="fa-solid fa-list-check"></i>
+            </div>
+            <h3>Test Management</h3>
+            <div class="tags">
+              <span class="tag">Test Cases</span>
+              <span class="tag">Test Plans</span>
+              <span class="tag">Test Suites</span>
+              <span class="tag">RTM</span>
+              <span class="tag">Test Reports</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card-icon">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3>Defect Management</h3>
+            <div class="tags">
+              <span class="tag">Bug Reporting</span>
+              <span class="tag">Defect Lifecycle</span>
+              <span class="tag">Root Cause Analysis</span>
+              <span class="tag">Reproduction Steps</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card-icon">
+              <i class="fa-solid fa-diagram-project"></i>
+            </div>
+            <h3>Testing Types</h3>
+            <div class="tags">
+              <span class="tag">Functional</span>
+              <span class="tag">Integration</span>
+              <span class="tag">System</span>
+              <span class="tag">Usability</span>
+              <span class="tag">API</span>
+              <span class="tag">Data Validation</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card-icon">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3>Automation</h3>
+            <div class="tags">
+              <span class="tag">Playwright</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Postman</span>
+              <span class="tag">REST API</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <div class="skill-card-icon">
+              <i class="fa-solid fa-gears"></i>
+            </div>
+            <h3>QA Practices</h3>
+            <div class="tags">
+              <span class="tag">SDLC</span>
+              <span class="tag">STLC</span>
+              <span class="tag">Agile/Scrum</span>
+              <span class="tag">Waterfall</span>
+              <span class="tag">Requirement Analysis</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         EXPERIENCE
+    ========================== -->
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Experience</div>
+          <h2 class="section-title">Professional journey.</h2>
+          <p class="section-description">
+            Experience spanning software solutions, IT, healthcare data
+            validation, client communication, and business workflows.
+          </p>
+        </div>
+
+        <div class="timeline">
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+
+            <div class="experience-card">
+              <div class="experience-top">
+                <div>
+                  <h3>Junior Executive, Sales & Marketing</h3>
+                  <div class="company">Softifybd Limited · Dhaka, Bangladesh</div>
+                </div>
+
+                <span class="date">Jul 2026 – Present</span>
+              </div>
+
+              <ul>
+                <li>
+                  Conduct client outreach and requirement gathering for
+                  BiznifyERP and other enterprise software solutions.
+                </li>
+                <li>
+                  Translate client needs into product-fit assessments and
+                  validate features against real-world workflows.
+                </li>
+                <li>
+                  Deliver product demonstrations and presentations tailored
+                  to client requirements.
+                </li>
+                <li>
+                  Manage the sales pipeline and maintain structured
+                  prospect documentation.
+                </li>
+                <li>
+                  Communicate technical and business benefits to clients
+                  and address product-related concerns.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal">
+            <div class="timeline-dot"></div>
+
+            <div class="experience-card">
+              <div class="experience-top">
+                <div>
+                  <h3>Junior Executive, IT & Medical Billing</h3>
+                  <div class="company">Aihcon BD Limited · Dhaka, Bangladesh</div>
+                </div>
+
+                <span class="date">May 2025 – Jun 2026</span>
+              </div>
+
+              <ul>
+                <li>
+                  Validated and verified patient records and billing claims
+                  against ICD-10/CPT standards.
+                </li>
+                <li>
+                  Identified data inconsistencies and discrepancies through
+                  systematic validation.
+                </li>
+                <li>
+                  Maintained quality compliance through structured auditing
+                  and validation checks.
+                </li>
+                <li>
+                  Contributed to process automation initiatives that reduced
+                  manual errors and improved data accuracy.
+                </li>
+                <li>
+                  Troubleshot billing software issues and maintained
+                  databases using structured documentation practices.
+                </li>
+              </ul>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Featured Projects</div>
+          <h2 class="section-title">Selected QA & technical work.</h2>
+          <p class="section-description">
+            Practical testing projects and technical applications demonstrating
+            quality assurance, automation, data validation, and software
+            development fundamentals.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <article class="project-card reveal">
+            <div class="project-icon">
+              <i class="fa-solid fa-building-columns"></i>
+            </div>
+
+            <h3>XYZ Bank Application</h3>
+
+            <p>
+              Manual QA project covering Login, Customer Management, Account
+              Management, and Fund Transfer modules. Designed and executed
+              positive and negative test cases and documented defects.
+            </p>
+
+            <div class="project-tech tags project-tech">
+              <span class="tag">Manual Testing</span>
+              <span class="tag">Functional</span>
+              <span class="tag">Regression</span>
+              <span class="tag">Usability</span>
+              <span class="tag">Bug Reporting</span>
+            </div>
+
+            <a href="#" class="project-link" aria-label="View XYZ Bank project on GitHub">
+              View on GitHub
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-icon">
+              <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+
+            <h3>E-Commerce Web Application</h3>
+
+            <p>
+              Manual QA project covering Registration, Login, Product Search,
+              Cart, Checkout, and Order Management with positive, negative,
+              boundary, usability, and regression testing.
+            </p>
+
+            <div class="project-tech tags">
+              <span class="tag">Manual Testing</span>
+              <span class="tag">Boundary Testing</span>
+              <span class="tag">Regression</span>
+              <span class="tag">UI/UX Testing</span>
+            </div>
+
+            <a href="#" class="project-link" aria-label="View E-Commerce project on GitHub">
+              View on GitHub
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-icon">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+
+            <h3>SQA Automation Coursework</h3>
+
+            <p>
+              UI and API automation coursework featuring Playwright-based
+              browser automation and Postman API testing for authentication,
+              CRUD operations, and negative REST API scenarios.
+            </p>
+
+            <div class="project-tech tags">
+              <span class="tag">Playwright</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">Postman</span>
+              <span class="tag">REST API</span>
+            </div>
+
+            <a href="#" class="project-link" aria-label="View automation project on GitHub">
+              View on GitHub
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-icon">
+              <i class="fa-solid fa-helmet-safety"></i>
+            </div>
+
+            <h3>Real-Time Safety Helmet Detection</h3>
+
+            <p>
+              Computer-vision system designed to detect construction-site
+              safety equipment including helmets, vests, and gloves using
+              deep learning and image-processing technologies.
+            </p>
+
+            <div class="project-tech tags">
+              <span class="tag">Python</span>
+              <span class="tag">YOLOv4</span>
+              <span class="tag">TensorFlow</span>
+              <span class="tag">Keras</span>
+              <span class="tag">OpenCV</span>
+            </div>
+
+            <a href="#" class="project-link" aria-label="View safety helmet project on GitHub">
+              View on GitHub
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-icon">
+              <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+
+            <h3>Weather Forecasting in Bangladesh</h3>
+
+            <p>
+              Machine-learning project comparing predictive models using
+              meteorological data from the Bangladesh Meteorological
+              Department.
+            </p>
+
+            <div class="project-tech tags">
+              <span class="tag">Python</span>
+              <span class="tag">Random Forest</span>
+              <span class="tag">Decision Tree</span>
+              <span class="tag">Linear Regression</span>
+              <span class="tag">KNN</span>
+            </div>
+
+            <a href="#" class="project-link" aria-label="View weather forecasting project on GitHub">
+              View on GitHub
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-icon">
+              <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+
+            <h3>BashaBari – Mobile Task Management App</h3>
+
+            <p>
+              Mobile task-management and reminder application designed with
+              Java and Android Studio, using Firebase for data storage and
+              cross-device synchronization.
+            </p>
+
+            <div class="project-tech tags">
+              <span class="tag">Java</span>
+              <span class="tag">Android Studio</span>
+              <span class="tag">Firebase</span>
+              <span class="tag">Mobile App</span>
+            </div>
+
+            <a href="#" class="project-link" aria-label="View BashaBari project on GitHub">
+              View on GitHub
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Education</div>
+          <h2 class="section-title">Academic background.</h2>
+        </div>
+
+        <div class="education-grid">
+
+          <article class="education-card reveal">
+            <div class="education-year">2026 – Present</div>
+            <h3>MSc in Computer Science (Data Science)</h3>
+            <p>American International University - Bangladesh</p>
+          </article>
+
+          <article class="education-card reveal">
+            <div class="education-year">Completed 2024</div>
+            <h3>BSc in Computer Science and Engineering</h3>
+            <p>North South University</p>
+          </article>
+
+          <article class="education-card reveal">
+            <div class="education-year">Completed 2016</div>
+            <h3>Higher Secondary Certificate</h3>
+            <p>Dhaka City College</p>
+          </article>
+
+          <article class="education-card reveal">
+            <div class="education-year">Completed 2014</div>
+            <h3>Secondary School Certificate</h3>
+            <p>Dhanmondi Govt. Boys’ High School</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         CERTIFICATIONS
+    ========================== -->
+
+    <section>
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Certification</div>
+          <h2 class="section-title">Continuous learning.</h2>
+        </div>
+
+        <div class="education-card reveal">
+          <div class="education-year">Professional Training</div>
+          <h3>SQA: Manual & Automated Testing — Ostad</h3>
+          <p>
+            Professional training covering manual testing, test case design,
+            defect reporting, and test automation fundamentals.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         RESUME DOWNLOAD
+    ========================== -->
+
+    <section>
+      <div class="container">
+        <div class="resume-box reveal">
+          <div>
+            <h2>Want the full resume?</h2>
+            <p>
+              Download the complete resume for a detailed overview of my
+              professional experience, projects, education, and skills.
+            </p>
+          </div>
+
+          <a href="resume.pdf" download="resume.pdf" class="btn btn-primary">
+            <i class="fa-solid fa-download"></i>
+            Download Resume
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Contact</div>
+          <h2 class="section-title">Let's connect.</h2>
+          <p class="section-description">
+            Interested in discussing an SQA opportunity, project, or
+            collaboration? Feel free to get in touch.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+
+          <div class="contact-details reveal">
+
+            <a
+              class="contact-item"
+              href="mailto:rubayate.hossain33@gmail.com"
+            >
+              <div class="contact-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+
+              <div>
+                <small>Email</small>
+                <span>rubayate.hossain33@gmail.com</span>
+              </div>
+            </a>
+
+            <a
+              class="contact-item"
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="contact-icon">
+                <i class="fa-brands fa-github"></i>
+              </div>
+
+              <div>
+                <small>GitHub</small>
+                <span>github.com/yourusername</span>
+              </div>
+            </a>
+
+            <a
+              class="contact-item"
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div class="contact-icon">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </div>
+
+              <div>
+                <small>LinkedIn</small>
+                <span>linkedin.com/in/yourusername</span>
+              </div>
+            </a>
+
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+
+              <div>
+                <small>Location</small>
+                <span>Dhaka, Bangladesh</span>
+              </div>
+            </div>
+
+          </div>
+
+          <form class="contact-form reveal" id="contactForm">
+
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell me about your opportunity or project..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Send Message
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+
+        <p>
+          © <span id="year"></span> Rubayate Hossain. All rights reserved.
+        </p>
+
+        <div class="social-links">
+          <a
+            href="https://github.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+          >
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+
+          <a
+            href="mailto:rubayate.hossain33@gmail.com"
+            aria-label="Email"
+          >
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // =========================
+    // MOBILE NAVIGATION
+    // =========================
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("active");
+
+      menuToggle.setAttribute("aria-expanded", isOpen);
+
+      menuToggle.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    document.querySelectorAll(".nav-links a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
+
+    // =========================
+    // SCROLL REVEAL
+    // =========================
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
+
+    // =========================
+    // FOOTER YEAR
+    // =========================
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // =========================
+    // CONTACT FORM
+    // GitHub Pages is static, so this
+    // opens the user's email client.
+    // =========================
+
+    const contactForm = document.getElementById("contactForm");
+
+    contactForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      const subject = encodeURIComponent(
+        "Portfolio Contact from " + name
+      );
+
+      const body = encodeURIComponent(
+        "Name: " +
+          name +
+          "\nEmail: " +
+          email +
+          "\n\nMessage:\n" +
+          message
+      );
+
+      window.location.href =
+        "mailto:rubayate.hossain33@gmail.com?subject=" +
+        subject +
+        "&body=" +
+        body;
+    });
+
+    // =========================
+    // PLACEHOLDER GITHUB LINKS
+    // Prevent "#" links from jumping
+    // to the top of the page.
+    // =========================
+
+    document.querySelectorAll('.project-link[href="#"]').forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        alert("Add your GitHub repository URL here.");
+      });
+    });
+  </script>
+
+</body>
+</html>
